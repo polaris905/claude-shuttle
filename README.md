@@ -89,7 +89,7 @@ claude-shuttle doesn't talk to cloud APIs or handle authentication itself. Inste
 
 **You need:**
 - A cloud storage desktop client (e.g., OneDrive, Dropbox, Google Drive) **installed and signed in** on each device
-- A folder within that client's managed area designated for claude-shuttle (e.g., `OneDrive/ClaudeShuttle`)
+- A folder within that client's managed area designated for claude-shuttle (e.g., `OneDrive/claude-shuttle`)
 
 That's it. No API keys, no OAuth flows, no accounts with claude-shuttle itself.
 
@@ -118,10 +118,10 @@ Create a folder inside your cloud storage area for claude-shuttle, then point th
 
 ```bash
 # Create the folder first — claude-shuttle requires it to already exist
-mkdir "C:\Users\me\OneDrive\ClaudeShuttle"
+mkdir "C:\Users\me\OneDrive\claude-shuttle"
 
 # Then configure
-claude-shuttle config --storage onedrive --remote-path "C:\Users\me\OneDrive\ClaudeShuttle"
+claude-shuttle config --storage onedrive --remote-path "C:\Users\me\OneDrive\claude-shuttle"
 ```
 
 Run this on each device. The `--remote-path` must point to an existing directory within your cloud storage client's managed area.
@@ -151,7 +151,7 @@ That's it. Your context shuttles with you.
 | `claude-shuttle config` | Show current config |
 | `claude-shuttle push` | Select and push a session |
 | `claude-shuttle push -s <session-id>` | Push a specific session |
-| `claude-shuttle pull` | Pull most recent cloud session |
+| `claude-shuttle pull` | Select and pull a cloud session |
 | `claude-shuttle pull -s <session-id>` | Pull a specific session |
 | `claude-shuttle list` | List all transferred sessions |
 | `claude-shuttle version` | Show version |

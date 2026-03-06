@@ -58,7 +58,6 @@ func main() {
 func printUsage() {
 	fmt.Printf("claude-shuttle %s — Shuttle Claude Code sessions across devices\n", version)
 	fmt.Println(`
-
 Commands:
   config    Configure cloud storage settings
   push      Upload a session to cloud storage
@@ -68,14 +67,14 @@ Commands:
   help      Show this help message
 
 Setup:
-  claude-shuttle config --storage onedrive --remote-path "C:\Users\me\OneDrive\ClaudeShuttle"
+  claude-shuttle config --storage onedrive --remote-path "C:\Users\me\OneDrive\claude-shuttle"
 
 Usage:
   claude-shuttle config                                          Show current config
   claude-shuttle push                                            Select and push a session
   claude-shuttle push -s <session-id>                            Push a specific session
   claude-shuttle list                                            List cloud sessions
-  claude-shuttle pull                                            Pull most recent cloud session
+  claude-shuttle pull                                            Select and pull a cloud session
   claude-shuttle pull -s <session-id>                            Pull a specific session
 
 Path Mappings:
@@ -536,8 +535,8 @@ func runList(args []string) {
 
 	fmt.Printf("\nTotal: %d session(s)\n", len(sessions))
 	fmt.Println("\nTo pull a session, run:")
-	fmt.Println("  claude-shuttle pull                    (pulls most recent)")
-	fmt.Println("  claude-shuttle pull -s <session-id>    (pulls specific session)")
+	fmt.Println("  claude-shuttle pull                    (select and pull a session)")
+	fmt.Println("  claude-shuttle pull -s <session-id>    (pull a specific session)")
 
 	// Print full IDs for copy-paste
 	fmt.Println("\nFull session IDs:")
